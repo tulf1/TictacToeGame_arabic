@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe_Project.SettingPage" BackgroundColor="#E6CFA1">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#E6CFA1" VerticalOptions="Center">
+
+            <!-- فريم ادخال صفحة الاعدادات  -->
+            <Frame Style="{StaticResource FrameStyle}">
+                <StackLayout Spacing="15" Margin="10" Padding="1">
+                    <!-- عنوان الصفحة -->
+                    <Label Text="الاعدادات" Style="{StaticResource LabelTextStyle}" FontSize="Large"  Margin="0,2,0,0" HorizontalOptions="Center"/>
+                    <BoxView Style="{StaticResource BoxViewStyle}" Margin="0,2,0,10"/>
+                    
+                    <!-- اضافة زر لتغيير الاسامي -->
+                    <Button Text="تغيير الاسامي" Clicked="Button_Clicked_PlayerName"  Style="{StaticResource ButtonStyle}"/>
+                    <!-- اضافة زر للتواصل -->
+                    <Button Text="تواصل معنا" Clicked="Button_Clicked_Contact"  Style="{StaticResource ButtonStyle}"/>
+                    <!-- اضافة زر المعلومات -->
+                    <Image Source="info20.png"  Style="{StaticResource ImgIcon}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="infoSetting_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </Frame>
+            <!-- الحقوق -->
+            <Label Text="جميع الحقوق محفوظة ⓒ لدى فريق النسور" Style="{StaticResource OwnerShipStyle}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

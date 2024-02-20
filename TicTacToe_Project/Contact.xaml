@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe_Project.Contact" BackgroundColor="#E6CFA1">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#E6CFA1" VerticalOptions="Center">
+            <!-- فريم ادخال صفحة التواصل  -->
+            <Frame Style="{StaticResource FrameStyle}">
+                <StackLayout Spacing="5" Margin="10" Padding="1">
+                    <!-- عنوان الصفحة -->
+                    <Label Text="تواصل معنا" Style="{StaticResource LabelTextStyle}" FontSize="Large"  Margin="0,2,0,0" HorizontalOptions="Center"/>
+                    <BoxView Style="{StaticResource BoxViewStyle}" Margin="0,2,0,10"/>
+                                    
+                    <StackLayout Orientation="Horizontal" Margin="0,-15,0,0">
+                        <!-- اختيار الموضوع -->
+                        <Picker x:Name="myPicker" Title="الموضوع" SelectedIndexChanged="myPicker_SelectedIndexChanged" Style="{StaticResource PickerStyle}">
+                        <Picker.ItemsSource>
+                           <x:Array Type="{x:Type x:String}">
+                              <x:String>اقتراح</x:String>
+                              <x:String>واجهة مشكلة</x:String>
+                              <x:String>امر اخر</x:String>
+                          </x:Array>
+                      </Picker.ItemsSource>
+                     </Picker>
+                        <Label x:Name="lblPicker" Text="اختر موضوع الرسالة : " Style="{StaticResource LabelTextStyle}" VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <!-- الرسالة  -->
+                    <Label Text="الرسالة" Style="{StaticResource LabelTextStyle}"/>
+                    <Editor x:Name="Messagetxt" Placeholder="ادخل الرسالة هنا" Style="{StaticResource MassegeStyle}"/>
+                    <Label x:Name="EnterMassage" Style="{StaticResource labelNameEmty}" Margin="0,-15,10,5"/>
+                    
+                    <!-- ارسال -->
+                    <Button x:Name="SendEmailButton"  Text="ارسال" Clicked="Button_Clicked_Send"  Style="{StaticResource ButtonStyle}"/>
+
+                    <!-- اضافة زر المعلومات -->
+                    <Image Source="info20.png" Style="{StaticResource ImgIcon}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ContactInfo_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    
+                </StackLayout>
+            </Frame>
+            <!-- الحقوق -->
+            <Label Text="جميع الحقوق محفوظة ⓒ لدى فريق النسور" Style="{StaticResource OwnerShipStyle}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe_Project.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#E6CFA1">
+
+    <StackLayout VerticalOptions="Center">
+        <StackLayout BackgroundColor="#E6CFA1" >
+
+            <!-- فريم ادخال الصفحة الرئيسية -->
+            <Frame Style="{StaticResource FrameStyle}">
+
+                <StackLayout Spacing="15" Margin="10" Padding="1">
+                    <!-- اضافة صورة الشعار -->
+                    <Image Source="Eagles.png"  Aspect="AspectFill" Margin="0,-15,5,-30"/>
+                    <!-- زر اللعب -->
+                    <Button Text="لعب" Clicked="Button_Clicked_Playing" Style="{StaticResource ButtonStyle}"/>
+                    <!-- زر الاعدادات -->
+                    <Button Text="الاعدادات" Clicked="Button_Clicked_PlayerName"  Style="{StaticResource ButtonStyle}"/>
+                    <!-- زر من نحن -->
+                    <Button Text="حولنا" Clicked="Button_Clicked_AboutUS"  Style="{StaticResource ButtonStyle}"/>
+                    <!-- زر الخروج -->
+                    <Button Text="خروج" Clicked="Button_Clicked_Exit"  Style="{StaticResource ButtonStyle}"/>
+                </StackLayout>
+            </Frame>
+            <!-- الحقوق -->
+            <Label Text="جميع الحقوق محفوظة ⓒ لدى فريق النسور" Style="{StaticResource OwnerShipStyle}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
+

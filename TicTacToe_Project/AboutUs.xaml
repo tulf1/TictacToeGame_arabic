@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe_Project.AboutUs" BackgroundColor="#E6CFA1" >
+    <ContentPage.Content>
+        <!-- قسم 1: الصور -->
+        <StackLayout>
+            <!-- إطار لعرض الصور -->
+            <Frame Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        
+                        <Image Source="Eagles.png" WidthRequest="160" HeightRequest="180" Aspect="AspectFit" Margin="0,-5,0,-10"/>
+                    </StackLayout>
+                   
+            </Frame>
+
+            <!-- قسم 3: كلمة تشجيعية -->
+            <Frame Style="{StaticResource FrameStyle}" Margin="12,-9,12,15">
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="التحدي هو طريق النجاح، استمروا وتفوقوا!" Style="{StaticResource LabelTextStyle}"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- قسم 4: نظرة عامة عن اللعبة -->
+            <Frame Style="{StaticResource FrameStyle}" Margin="12,-9,12,15">
+                <StackLayout Spacing="3">
+                    <Label Text="نبذة عن اللعبة" Style="{StaticResource LabelTextStyle}" FontSize="Large" HorizontalOptions="Center" 
+                           TextColor="#F5EDDE"/>
+                    <BoxView Style="{StaticResource BoxViewStyle}" Margin="0,2,0,10"/>
+                    <Label Text="لعبة الـ 'أكس أو' هي لعبة تقوم فيها اثنين من اللاعبين بوضع علامات 'X' و 'O' على لوحة. الهدف هو تحقيق تسلسل من ثلاث علامات متتالية في أي اتجاه. تعتبر اللعبة تحديًا بسيطًا ومسليًا."
+                           Style="{StaticResource LabelTextStyle}"/>
+                </StackLayout>
+            </Frame>
+            <!-- الحقوق -->
+            <Label Text="جميع الحقوق محفوظة ⓒ لدى فريق النسور" Style="{StaticResource OwnerShipStyle}" Margin="12,-9,12,15"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

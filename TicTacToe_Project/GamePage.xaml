@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe_Project.GamePage" BackgroundColor="#E6CFA1">
+
+    <!-- اضافة عناصر للبار العلوي  -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="info20.png" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem IconImageSource="rename.png" Clicked="ToolbarItem_Clicked_Rename"/>
+        <ToolbarItem IconImageSource="refresh.png" Clicked="ToolbarItem_Clicked_Refresh"/>
+        <ToolbarItem IconImageSource="home.png" Clicked="ToolbarItem_Clicked_Home"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <StackLayout Spacing="0">
+
+            <!-- فريم السكور -->
+            <Frame Style="{StaticResource FrameStyle}" HorizontalOptions="Center" Margin="0" Padding="15">
+                <StackLayout>
+                    <Grid>
+                        <!-- تحديد تقسيم القريد للسكور -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- رقم الجولة -->
+                        <Frame Style="{StaticResource FrameStyleScore}" Grid.Row="0" Grid.Column="0">
+                            <StackLayout HorizontalOptions="Center">
+                                <Label Text="رقم الجولة" Style="{StaticResource LabelTextStyle}" FontSize="Default"/>
+
+                                <BoxView Style="{StaticResource BoxViewStyle}"/>
+                                <Label x:Name="ResultAllScore" Style="{StaticResource LabelScore}" TextColor="#DCF3F1"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- توقيت الجولة -->
+                        <Frame Style="{StaticResource FrameStyleScore}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                            <StackLayout HorizontalOptions="Center">
+                                <Label Text="توقيت الجولة" Style="{StaticResource LabelTextStyle}" FontSize="Default"/>
+
+                                <BoxView Style="{StaticResource BoxViewStyle}"/>
+                                <Label x:Name="TimeCountlbl" Style="{StaticResource LabelScore}"/>
+                            </StackLayout>
+                        </Frame>
+                        
+                        <!-- عدد فوز اللاعب الاول -->
+                        <Frame Style="{StaticResource FrameStyleScore}" Grid.Row="1" Grid.Column="0">
+                            <StackLayout HorizontalOptions="Center">
+                                <Label Text="عدد فوز (X)" Style="{StaticResource LabelTextStyle}" FontSize="Caption"/>
+                                <Label x:Name="Player1" Style="{StaticResource LabelTextStyle}" HorizontalOptions="Center"/>
+
+                                <BoxView Style="{StaticResource BoxViewStyle}"/>
+                                <Label x:Name="XWinScore" Style="{StaticResource LabelScore}" TextColor="#a891e2"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- عدد فوز اللاعب الثاني -->
+                        <Frame Style="{StaticResource FrameStyleScore}" Grid.Row="1" Grid.Column="2">
+                            <StackLayout HorizontalOptions="Center">
+                                <Label Text="عدد فوز (O)" Style="{StaticResource LabelTextStyle}" FontSize="Caption"/>
+                                <Label x:Name="Player2" Style="{StaticResource LabelTextStyle}" HorizontalOptions="Center"/>
+
+                                <BoxView Style="{StaticResource BoxViewStyle}"/>
+                                <Label x:Name="OWinScore" Style="{StaticResource LabelScore}" TextColor="#91e2d9"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- عدد التعادلات -->
+                        <Frame Style="{StaticResource FrameStyleScore}" Grid.Row="0" Grid.Column="2">
+                            <StackLayout HorizontalOptions="Center">
+                                <Label Text="عدد التعادلات" Style="{StaticResource LabelTextStyle}" FontSize="Default"/>
+
+                                <BoxView Style="{StaticResource BoxViewStyle}"/>
+                                <Label x:Name="DrawScore" Style="{StaticResource LabelScore}" TextColor="#211936"/>
+                            </StackLayout>
+                        </Frame>
+
+                    </Grid>
+                </StackLayout>
+                </Frame>
+            
+
+            <!-- فريم اللعبه -->
+            <Frame Style="{StaticResource FrameStyle}" VerticalOptions="StartAndExpand">
+                <StackLayout>
+                    <Label Text="اضغط للعب" x:Name="PlayerTurnText" Style="{StaticResource LabelTextStyle}" HorizontalOptions="Center" FontSize="Large"/>
+                    <Grid x:Name="GameGrid" HorizontalOptions="Center" Padding="3">
+                        <!-- تحديد تقسيم القريد للعبه -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- ترتيب الازارير في القريد -->
+                        <ImageButton x:Name="button0" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="0" Grid.Column="0"/>
+                        <ImageButton x:Name="button1" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="0" Grid.Column="1"/>
+                        <ImageButton x:Name="button2" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="0" Grid.Column="2"/>
+
+                        <ImageButton x:Name="button3" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="1" Grid.Column="0"/>
+                        <ImageButton x:Name="button4" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="1" Grid.Column="1"/>
+                        <ImageButton x:Name="button5" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="1" Grid.Column="2"/>
+
+                        <ImageButton x:Name="button6" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="2" Grid.Column="0"/>
+                        <ImageButton x:Name="button7" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="2" Grid.Column="1"/>
+                        <ImageButton x:Name="button8" Clicked="Button_Clicked_Game" Style="{StaticResource ImgButton}" Grid.Row="2" Grid.Column="2"/>
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

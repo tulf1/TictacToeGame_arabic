@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage   xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe_Project.PlayerNameEntry" 
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="#E6CFA1">
+    
+    <ContentPage.Content>
+
+        <StackLayout Spacing="1" BackgroundColor="#E6CFA1" VerticalOptions="CenterAndExpand">
+
+            <!-- فريم ادخال اسم الاعبين -->
+            <Frame Style="{StaticResource FrameStyle}">
+
+                <StackLayout Spacing="3" Margin="10" Padding="1">
+                    <!-- اضافة صورة الشعار -->
+                    <Image Source="Eagles2.png" Aspect="AspectFill" Margin="0,-15,5,10"/>
+
+                    <!-- ادخال اسم اللاعب الاول -->
+                    <Label Text="أدخل اسم اللاعب الاول (X)" x:Name="lbloneplay" Style="{StaticResource LabelTextStyle}"/>
+                    <Entry x:Name="PlayerOneName" Placeholder="ادخل الاسم هنا" Style="{StaticResource EntryStyle}"/>
+                    <Label x:Name="EnterName1"  Style="{StaticResource labelNameEmty}"/>
+
+                    <!-- ادخال اسم اللاعب الثاني -->
+                    <Label Text="أدخل اسم اللاعب الثاني (O)" x:Name="lbltwoplay" Style="{StaticResource LabelTextStyle}"/>
+                    <Entry x:Name="PlayerTwoName" Placeholder="وهنا ايضا" Style="{StaticResource EntryStyle}"/>
+                    <Label x:Name="EnterName2"  Style="{StaticResource labelNameEmty}"/>
+
+                    <Label/>
+                    <!-- زر بدأ اللعب -->
+                    <Button Text="لعب" x:Name="myButton" Clicked="Button_Clicked_Entry_Player"  Style="{StaticResource ButtonStyle}"/>
+                    <!-- اضافة زر المعلومات -->
+                    <Image Source="info20.png"  Style="{StaticResource ImgIcon}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ImageButton_Clicked_Info"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+            </Frame>
+            <!-- الحقوق -->
+            <Label Text="جميع الحقوق محفوظة ⓒ لدى فريق النسور" Style="{StaticResource OwnerShipStyle}"/>
+        </StackLayout>
+      </ContentPage.Content>
+    
+</ContentPage>

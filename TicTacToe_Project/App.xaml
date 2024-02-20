@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe_Project.App">
+
+    <Application.Resources>
+               
+        <ResourceDictionary>
+            <!-- للتعديل على تصميم البار -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#E7AC37"/>
+                <Setter Property="BarTextColor" Value="#F5EDDE"/>
+            </Style>
+            
+            <!-- للتعديل على تصميم الفريم العام -->
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="Margin" Value="12"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="BackgroundColor" Value="#E7AC37"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <!-- للتعديل على تصميم الفريم السكور -->
+            <Style x:Key="FrameStyleScore" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#DED3BF"/>
+                <Setter Property="CornerRadius" Value="7"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="BorderColor" Value="Black"/>
+            </Style>
+
+            <!-- للتعديل على تصميم ليبل الانتري -->
+            <Style x:Key="LabelTextStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Courier New"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <!-- للتعديل على تصميم ليبل السكور -->
+            <Style x:Key="LabelScore" TargetType="Label" BasedOn="{StaticResource LabelTextStyle}">
+                <Setter Property="TextColor" Value="#F13060"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            
+            <!--  للتعديل على تصميم ليبل الانتري التحذيري -->
+            <Style x:Key="labelNameEmty" TargetType="Label">
+                <Setter Property="TextDecorations" Value="Underline"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontFamily" Value="Courier New"/>
+                <Setter Property="TextColor" Value="#FF3D3D"/>
+            </Style>
+
+            <!-- للتعديل على تصميم الانتري -->
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="MaxLength" Value="20"/>
+                <Setter Property="FlowDirection" Value="RightToLeft"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="Keyboard" Value="Plain"/>
+            </Style>
+                
+            <!-- للتعديل على تصميم الزر -->
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#F5EDDE"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontFamily" Value="Courier New"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <!-- للتعديل على حركة الزر -->
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="TranslationY" Value="5"/>
+                        <Setter Property="TranslationX" Value="0"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- للتعديل على تصميم الزر اللعبه -->
+            <Style x:Key="ImgButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="#FFF2D7"/>
+                <Setter Property="CornerRadius" Value="7"/>
+                <Setter Property="HeightRequest" Value="90"/>
+                <Setter Property="WidthRequest" Value="110"/>
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <!-- للتعديل على حركة الزر -->
+                <Style.Triggers>
+                    <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
+                        <Setter Property="TranslationY" Value="5"/>
+                        <Setter Property="TranslationX" Value="0"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- للتعديل على تصميم الايكون -->
+            <Style x:Key="ImgIcon" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill"/>
+                <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0,5,0,0"/>
+            </Style>
+            
+            <!-- للتعديل على تصميم الرسالة -->
+            <Style x:Key="MassegeStyle" TargetType="Editor" >
+                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Keyboard" Value="Plain"/>
+                <Setter Property="MaxLength" Value="200"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Courier New"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <!-- للتعديل على تصميم اختيار الموضوع -->
+            <Style x:Key="PickerStyle" TargetType="Picker">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="WidthRequest" Value="100"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Courier New"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            
+            <!-- للتعديل على تصميم الحقوق -->
+            <Style x:Key="OwnerShipStyle" TargetType="Label">
+                <Setter Property="Opacity" Value="1"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <!-- للتعديل على تصميم الخط -->
+            <Style x:Key="BoxViewStyle" TargetType="BoxView">
+                <Setter Property="Color" Value="Black"/>
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
